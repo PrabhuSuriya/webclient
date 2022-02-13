@@ -6,6 +6,21 @@
     </div>
   </div>
   <div class="row advanced-search-row">
+    <div class="offset-3 col-6">
+      <mat-checkbox
+        *ngIf="query"
+        class="align-middle mr-2"
+        type="checkbox"
+        id="sameExactly"
+        name="sameExactly"
+        [(ngModel)]="sameExactly"
+        [ngModelOptions]="{ standalone: true }"
+      >
+      Exact match
+      </mat-checkbox>
+    </div>
+  </div>
+  <div class="row advanced-search-row">
     <div class="col-3">Folder</div>
     <div class="col-9">
       <div ngbDropdown>
@@ -181,6 +196,7 @@
           [(ngModel)]="startDate"
           [skipFirst]="true"
           (clickOutside)="isShowStartDate = false"
+          (dateSelect)="isShowStartDate = false"
           *ngIf="isShowStartDate"
           [maxDate]="endDate ? endDate : calendar.getToday()"
           class="bg-white ng-datepicker ng-datepicker-265 advanced-search-date-picker position-absolute"
@@ -219,6 +235,7 @@
           *ngIf="isShowEndDate"
           [skipFirst]="true"
           (clickOutside)="isShowEndDate = false"
+          (dateSelect)="isShowEndDate = false"
           [maxDate]="calendar.getToday()"
           [minDate]="startDate ? startDate : null"
           class="bg-white ng-datepicker ng-datepicker-265 advanced-search-date-picker position-absolute"
@@ -228,19 +245,7 @@
     </div>
   </div>
   <div class="row advanced-search-row mt-3">
-    <div class="col-6">
-      <mat-checkbox
-        class="align-middle mr-2"
-        type="checkbox"
-        id="sameExactly"
-        name="sameExactly"
-        [(ngModel)]="sameExactly"
-        [ngModelOptions]="{ standalone: true }"
-      >
-      Same exactly
-      </mat-checkbox>
-    </div>
-    <div class="col-6">
+    <div class="offset-6 col-6">
       <mat-checkbox
         class="align-middle mr-2"
         type="checkbox"

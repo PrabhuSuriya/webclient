@@ -272,6 +272,11 @@
     .dropdown-menu.show {
       margin-top: 0;
     }
+    .advanced-search-dropdown {
+      max-height: 700px;
+      overflow-y: auto;
+      height: 611px;
+    }
   }
 
   .clear-btn {

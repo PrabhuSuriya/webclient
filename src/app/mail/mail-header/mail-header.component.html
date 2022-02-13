@@ -40,13 +40,11 @@
                   ngbDropdownToggle
                   class="search-btn advanced-search-btn"
                 ></button>
-                <div ngbDropdownMenu aria-labelledby="dateDropdownMenuButton">
-                  <div>
+                <div ngbDropdownMenu aria-labelledby="dateDropdownMenuButton" class="advanced-search-dropdown">
                     <app-advanced-search
                       (close)="closeAdvancedSearch($event)"
                       [searchInput]="searchInput.value"
                     ></app-advanced-search>
-                  </div>
                 </div>
               </div>
             </div>

@@ -57,53 +57,11 @@ export class MailService {
     const { searchData, limit, offset } = payload;
     let url = '';
     if (searchData) {
-      let queryParameters = '';
-      if (searchData.q) {
-        queryParameters = `q=${searchData.q}`;
-        if (searchData.exact) {
-          queryParameters = `${queryParameters}&exact=${searchData.exact}`;
-        }
-      }
-      if (searchData.sender) {
-        queryParameters = queryParameters
-          ? `${queryParameters}&sender=${searchData.sender}`
-          : `sender=${searchData.sender}`;
-      }
-      if (searchData.receiver) {
-        queryParameters = queryParameters
-          ? `${queryParameters}&receiver=${searchData.receiver}`
-          : `receiver=${searchData.receiver}`;
-      }
-      if (searchData.start_date) {
-        queryParameters = queryParameters
-          ? `${queryParameters}&start_date=${searchData.start_date}`
-          : `start_date=${searchData.start_date}`;
-      }
-      if (searchData.end_date) {
-        queryParameters = queryParameters
-          ? `${queryParameters}&end_date=${searchData.end_date}`
-          : `end_date=${searchData.end_date}`;
-      }
-      if (searchData.size !== undefined) {
-        queryParameters = queryParameters ? `${queryParameters}&size=${searchData.size}` : `size=${searchData.size}`;
-        if (searchData.size_operator) {
-          queryParameters = `${queryParameters}&size_operator=${searchData.size_operator}`;
-        }
-      }
-      if (searchData.have_attachment) {
-        queryParameters = queryParameters
-          ? `${queryParameters}&have_attachment=${searchData.have_attachment}`
-          : `have_attachment=${searchData.have_attachment}`;
-      }
-      if (searchData.folder) {
-        queryParameters = queryParameters
-          ? `${queryParameters}&folder=${searchData.folder}`
-          : `folder=${searchData.folder}`;
-      }
-      if (queryParameters) {
-        queryParameters = `${queryParameters}&`;
-      }
-      url = `${apiUrl}search/messages/?${queryParameters}limit=${limit}&offset=${offset}`;
+      const queryParameters = Object.entries(searchData)
+        .filter(([, v]) => !!v)
+        .map(([k, v]) => `${k}=${v}`)
+        .join('&');
+      url = `${apiUrl}search/messages/?${queryParameters}&limit=${limit}&offset=${offset}`;
     } else {
       url = `${apiUrl}search/messages/?q=''`;
     }
