@@ -411,6 +411,10 @@ export class MailSettingsComponent implements OnInit, AfterViewInit {
     this.updateSettings('auto_read', auto_read_mode);
   }
 
+  updateStoreForwardedCopy(enable_copy_forwarding: boolean) {
+    this.updateSettings('enable_copy_forwarding', enable_copy_forwarding);
+  }
+
   /**
    * convert m:s format to milliseconds and update settings
    */
