@@ -918,6 +918,7 @@
     "confirm_include_attach": "Ekleri Dahil Etmeyi Onayla",
     "show_plain_text": "Düz Metni Göster",
     "auto_read_email": "Emaili otomatik oku",
+    "store_forwarded_copy": "Store forwarded copy",
     "show_rich_text": "Zengin Metni Göster",
     "password_encryption_message_desc": "Bu mesaj şifrelenmiştir. Lütfen daha önce belirlediğiniz şifreyi girin.",
     "password_hint": "Parola İpucu: ",

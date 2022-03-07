@@ -922,6 +922,7 @@
     "confirm_include_attach": "Confirme a inclusão de anexos",
     "show_plain_text": "Mostrar Apenas Texto",
     "auto_read_email": "Auto read email",
+    "store_forwarded_copy": "Store forwarded copy",
     "show_rich_text": "Mostrar Texto Formatado",
     "password_encryption_message_desc": "This message has been encrypted with password. Please enter the password that you set before.",
     "password_hint": "Password Hint: ",
