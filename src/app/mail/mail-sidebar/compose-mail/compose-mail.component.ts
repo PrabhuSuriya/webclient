@@ -169,6 +169,8 @@ export class ComposeMailComponent implements OnInit, AfterViewInit, OnDestroy {
   closeConfirmModalRef: NgbModalRef;
 
   draftId: number;
+  
+  asc="asd";
 
   _htmlQuotedMailContent: string;
 
