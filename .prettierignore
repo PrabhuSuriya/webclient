@@ -5,3 +5,6 @@ src/assets/js/ckeditor-build/ckeditor.js.map
 package-lock.json
 yarn.lock
 node_modules
+node_modules/*
+e2e/*
+dist/*
